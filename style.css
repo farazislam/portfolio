@@ -1,3 +1,9 @@
+:root {
+    --grey: #f8f8f8;
+    --darkgrey: #808080;
+    --white: #f0f0f0;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,17 +12,23 @@
 }
 
 /* NAVBAR */
+.hidden {
+    display: none !important;
+}
 
 .navbar {
-   height: 9vh;
+   height: 80px;
    width: 100%;
    display: flex;
    justify-content: space-between;
    align-items: center;
+   position: fixed;
+   background-color: white;
+   top: 0;
 }
 
 .navbar-brand {
-    margin-left: 50px;
+    margin-left: 30px;
 }
 
 .navbar-brand a {
@@ -28,21 +40,48 @@
 }
 
 .navbar-right {
-    margin-right: 50px;
-    width: 300px;
+    display: flex;
+    align-content: flex-end;
+    justify-content: flex-end;
 }
 
-.navbar-right ul{
+.navbar-right ul {
     display:flex;
     justify-content: space-between;
-    flex-direction: row;
     list-style: none;
+    display: none;
+}
+
+.navbar-hamburger {
+    margin-right: 30px;
+    height: 18px;
+    width: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.navbar-hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    border-radius: 25%;
+}
+
+@media (width > 900px) {
+    .navbar-right ul {
+        display: flex;
+    }
+
+    .navbar-hamburger {
+        display: none;
+    }
 }
 
 .navbar-link{
     text-decoration: none;
+    font-size: 1rem;
     font-weight: bold;
-    font-size: 1.1rem;
     letter-spacing: 0.01rem;
     color: black;
     transition: 0.5s;
@@ -52,37 +91,84 @@
     color:#2674f0;
 }
 
+.hamburgerNavbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.hamburgerNavbar ul {
+    height: 250px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    list-style: none;
+}
+
+.hamburgerNavbar a {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+.hamburgerNavbar .close {
+    position: absolute;
+    top: 10;
+    right: 10;
+    height: 40px;
+    width: 40px;
+}
+
+.close .line {
+    border: 1px solid black;
+}
+
+.close .line:first-of-type {
+    /* transform: rotate(45deg); */
+    transform: translateY(28px) rotate(45deg);
+}
+
+.close .line:last-of-type {
+    transform: translateY(25px) rotate(-45deg);
+
+}
 /* NAVBAR */
 
 /* HOME */
 .home {
-    height: 1200px;
+    height: 100vh;
     width: 100%;
-    background: linear-gradient(0deg, #f9f9f9, #f9f9f9 95%, #f0f0f0);
-    border: 1px solid #f9f9f9;
-
+    background: linear-gradient(0deg, var(--grey), var(--grey) 93%, var(--darkgrey));
+    border: 5px solid var(--grey);
 }
 
 .profile {
-    width: 60%;
-    margin: auto;
-    margin-top: 110px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    column-gap: 3rem;
-    row-gap: 5rem;
+    width: 100%;
+    height: 700px;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .profile-left {
+    order: 2;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile-left h1 {
-    font-size: 3.5rem;
+    max-width: 350px;
+    font-size: 2.5rem;
     font-weight: bolder;
+    text-align: center;
 }
 
 .profile-left p {
@@ -90,7 +176,8 @@
     margin-top: 20px;
     line-height: 30px;
     letter-spacing: 0.5;
-    width: 490px;
+    text-align: center;
+    padding: 0px 30px;
 }
 
 .profile-links {
@@ -102,8 +189,8 @@
 }
 
 .profile-right {
-    margin-top: 0px;
-    height: 100%;
+    order: 1;
+    margin-bottom: 50px;
 }
 
 @keyframes blob {
@@ -138,6 +225,7 @@
 }
 
 .profile-pic img {
+    height: 250px;
     border: 3px solid black;
     border-top-left-radius: 0px;
     animation-name: blob;
@@ -149,31 +237,129 @@
     animation-fill-mode: both;
 }
 
-.profile-tech-stack {
+.tech-stack {
     display: flex;
-    grid-row-start: 2;
-    grid-column-start: 1;
-    grid-column-end: 3;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding-right: 260px;
 }
 
-.profile-tech-stack p {
+.tech-stack p {
     font-size: 1.1rem;
+    font-weight: 100;
     letter-spacing: 0.1rem;
     padding-right: 30px;
 }
 
+.icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0px 20px;
+
+}
+
 .icon-container {
-    height: 60px;
-    width: 60px;
+    height: 70px;
+    width: 70px;
     border-radius: 50%;
     background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0px 0px 4px 1px rgba(234, 234, 234, 1);
+    margin-top: 15px;
+    margin-right: 20px;
 }
+
+@media (width > 900px) {
+    .home {
+        height: 100vh;
+    }
+
+    .profile {
+        flex-direction: row;
+        height: 400px;
+    }
+
+    .profile-left, .profile-right {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .tech-stack {
+        margin-top: 0px;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .icons {
+        margin-top: 0px;
+    }
+    
+}
+
+/* HOME */
+
+/* ABOUT ME */
+
+.section-about-me {
+    height: 600px;
+    width: 100%;
+    background: white;
+    display: grid;
+    grid-template-columns: 500px 500px;
+    column-gap: 100px;
+    justify-content: center;
+    padding-top: 130px;
+}
+
+.about-me-left {
+    display: flex;
+    justify-content: right;
+}
+
+.about-me-left img {
+    border-radius: 1.7rem;
+    height: 360px;
+    width: 450px;
+}
+
+.about-me-right {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+}
+
+.about-me-right h3 {
+    font-weight: bolder;
+    font-size: 1.1rem;
+    letter-spacing: 0.01rem;
+    line-height: 5px;
+    color:#2674f0; 
+}
+
+.about-me-right h2 {
+    margin-top: 20px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.about-me-right p {
+    margin-top: 20px;
+    font-family: Mulish, sans-serif;
+    line-height: 1.5;
+    color: grey;
+}
+
+
+
+
+
+
+/* ABOUT ME */
 
 
 

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href=""">
+    <link rel=" stylesheet" href="style.css">
     <title>Faraz Islam</title>
     <script src="https://kit.fontawesome.com/899c5adb56.js" crossorigin="anonymous"></script>
 </head>
@@ -11,7 +12,7 @@
 <body>
 
     <!--NAVBAR-->
-    <nav class="navbar">
+    <nav id="navbar" class="navbar">
         <div class="navbar-brand"><a href="#">Faraz.dev</a></div>
         <div class="navbar-right">
             <ul>
@@ -20,7 +21,25 @@
                 <li><a href="#" class="navbar-link">Projects</a></li>
                 <li><a href="#" class="navbar-link">Contact</a></li>
             </ul>
+            <div id="navbar-hamburger" class="navbar-hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
         </div>
+    </nav>
+
+    <nav id="hamburgerNavbar" class="hamburgerNavbar hidden">
+        <div id="close" class="close hidden">
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul>
+            <li><a href="#" class="navbar-link">Home</a></li>
+            <li><a href="#" class="navbar-link">About</a></li>
+            <li><a href="#" class="navbar-link">Projects</a></li>
+            <li><a href="#" class="navbar-link">Contact</a></li>
+        </ul>
     </nav>
     <!--NAVBAR-->
 
@@ -42,9 +61,10 @@
                     <img src="img/profile.png" alt="">
                 </div>
             </div>
-
-            <div class="profile-tech-stack">
-                <p>Tech Stack  |</p>
+        </div>
+        <div class="tech-stack">
+            <p>Tech Stack |</p>
+            <div class="icons">
                 <div class="icon-container"><img src="img/html5.png" alt=""></div>
                 <div class="icon-container"><img src="img/css3.png" alt=""></div>
                 <div class="icon-container"><img src="img/javascript.png" alt=""></div>
@@ -52,10 +72,49 @@
                 <div class="icon-container"><img src="img/tailwind.png" alt=""></div>
                 <div class="icon-container"><img src="img/nextjs.png" alt=""></div>
             </div>
-        </div>
     </section>
 
     <!--HOME-->
+
+    <!-- ABOUT ME-->
+    <section class="section-about-me">
+        <div class="about-me-left">
+            <img src="img/desk.webp">
+        </div>
+        <div class="about-me-right">
+            <h3>ABOUT ME</h3>
+            <h2>A dedicated Front-end Developer based in Essex, United Kingdom</h2>
+            <p>
+                As a Junior Front-End Developer, I possess an impressive arsenal of skills in HTML, CSS, JavaScript,
+                React, NextJS and Tailwind. I excel in designing and maintaining responsive websites that offer a smooth
+                user experience. My expertise lies in crafting dynamic, engaging interfaces through writing clean and
+                optimized code and utilizing cutting-edge development tools and techniques. I am also a team player who
+                thrives in collaborating with cross-functional teams to produce outstanding web applications.
+            </p>
+        </div>
+    </section>
+
+    <!--ABOUT ME-->
+
+    PROJECT-->
+    <section class="section-PROJECTS">
+        <h3>PROJECTS</h3>
+        <div class="projectImage">
+            <img src="img/zelman.png" class="zelman">
+        </div>
+        <div class="about-me-right">
+            <h2>A dedicated Front-end Developer based in Essex, United Kingdom</h2>
+            <p>
+                As a Junior Front-End Developer, I possess an impressive arsenal of skills in HTML, CSS, JavaScript,
+                React, NextJS and Tailwind. I excel in designing and maintaining responsive websites that offer a smooth
+                user experience. My expertise lies in crafting dynamic, engaging interfaces through writing clean and
+                optimized code and utilizing cutting-edge development tools and techniques. I am also a team player who
+                thrives in collaborating with cross-functional teams to produce outstanding web applications.
+            </p>
+        </div>
+    </section>
+
+    <!--PROJECTS-->
 
     <script src="script.js"></script>
 </body>
