@@ -75,6 +75,8 @@ html, body {
 
 @media (width > 900px) {
     .navbar-right ul {
+        margin-right: 100px;
+        width: 350px;
         display: flex;
     }
 
@@ -281,12 +283,15 @@ html, body {
 
 @media (width > 900px) {
     .home {
-        height: 100vh;
+        height: 60vh;
     }
 
     .profile {
         flex-direction: row;
         height: 400px;
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .profile-left, .profile-right {
@@ -367,7 +372,42 @@ html, body {
 
 /* PROJECTS */
 .section-projects {
-    margin-top: 100px;
+    margin-top: 80px;
+    width: 100%;
+    height: 500px;
+    background-color: var(--grey);
+}
+
+.section-projects h3 {
+    padding-top: 40px;
+    font-weight: bolder;
+    font-size: 1.1rem;
+    letter-spacing: 0.01rem;
+    line-height: 5px;
+    color:#2674f0; 
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.projects {
+    margin-top: 50px;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-img {
+    height: 300px;
+}
+
+.project-description {
+    display: inline-block;
+    margin-top: 20px;
+    width: 250px;
 }
 
 
